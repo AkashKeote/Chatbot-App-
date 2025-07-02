@@ -5,9 +5,10 @@ import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const ChatbotApp());
+  runApp(DevicePreview(enabled: false,builder: (context) => ChatbotApp()));
 }
 
 class ChatbotApp extends StatelessWidget {
@@ -55,7 +56,7 @@ class _ChatScreenState extends State<ChatScreen> {
 
   void _initDio() {
     _dio = Dio(BaseOptions(
-      baseUrl: 'https://akashkeote.vercel.app',
+      baseUrl: 'https://jaykeote.vercel.app/',
       connectTimeout: const Duration(seconds: 30),
       receiveTimeout: const Duration(seconds: 30),
     ));
@@ -160,7 +161,6 @@ class _ChatScreenState extends State<ChatScreen> {
             underline: Container(),
             dropdownColor: Colors.white,
           ),
-         
         ],
       ),
       body: Container(
